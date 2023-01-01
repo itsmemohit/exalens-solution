@@ -1,0 +1,47 @@
+Approach:
+
+Iterate through the blocks and for each block, check if it has the required building. 
+If it does,update the minimum distance for the required building.
+Find the maximum distance among all the minimum distances. This is because we want to
+ minimize the farthest distance we have to walk to reach any of the required buildings.
+Find the block index with the maximum distance. This is the optimal block for the given
+ requirements.
+
+blocks = [
+  {
+      "gym": false,
+      "school": true,
+      "store": false,
+  },
+  {
+      "gym": true,
+      "school": false,
+      "store": false,
+  },
+  {
+      "gym": true,
+      "school": true,
+      "store": false,
+  },
+  {
+      "gym": false,
+      "school": true,
+      "store": false,
+  },
+  {
+  "gym": false,
+  "school": true,
+  "store": true,
+  }
+]
+reqs = ["gym", "school", "store"]
+
+The minimum distances for each required building are as follows:
+
+Gym: Number.MAX_SAFE_INTEGER (since there is no gym in any of the blocks)
+School: 0
+Store: 4
+The maximum distance among the minimum distances is 4, which corresponds to the store.
+ Therefore, the optimal block is at index 4.
+
+The output of the findOptimalBlock function for this input would be 3.
